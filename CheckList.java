@@ -23,13 +23,8 @@ public class CheckList extends ValidList{
 		}
 	}
 	
-	/**@arguments the letter that is being guessed
-	*creates a list which is the result of comparing the letter to the word
-	*each index is by default "*"
-	*an exception is made when the letter guessed appears in the word,
-	*in that case the index is "guessChosen"
-	*/
-	public void checkOff(String guessChosen){
+	//If the guessed letter is part of the String, replace the letter with *
+	public void replaceLetter(String guessChosen){
 		
 		for (int index = 0; index< size ; index++){
 			if (guessChosen.equals(word.substring(index,(index+1)))){
@@ -40,10 +35,9 @@ public class CheckList extends ValidList{
 	}
 	
 
-	/**checks to see if the list generated is empty (only contains "*")
-	* if its not empty this means that a letter which was present in the word was guessed (a correct guess)
-	*and an index contains this letter (ie. ***e***e)
-	*@returns boolean result of whether it is an empty list/was a correct guess */
+	/**Check if the array is filled with *
+	 * If it is, it means that the user cleared the challenge and they won.
+	*@returns boolean result of whether user clears the String**/
 	public boolean winGame() {
 		return listCheck(guesses, size);
 	}

@@ -5,7 +5,6 @@
 *uses a for loop to go through the word*/
 public class ValidGuess extends ValidList{
 	//instance variables
-	private boolean isValid = false;
 	private String word;
 	private String guess;
 	private static String[] guesses;
@@ -17,13 +16,11 @@ public class ValidGuess extends ValidList{
 		size = word.length();
 	}
 	
-	/**@arguments the letter that is being guessed
-	*creates a list which is the result of comparing the letter to the word
-	*each index is by default "*"
-	*an exception is made when the letter guessed appears in the word,
-	*in that case the index is "guessChosen"
+	/**If the letter guessed is part of the String
+	 * then it will go into an array to keep track of guesses available
+	 * otherwise fill with *
 	*/
-	public void answerList(String guessChosen){
+	public void guessesAvailable(String guessChosen){
 		guess = guessChosen;
 		guesses = new String[size];
 		for (int index = 0; index< size ; index++){
@@ -37,10 +34,8 @@ public class ValidGuess extends ValidList{
 	}
 
 	
-	/**checks to see if the list generated is empty (only contains "*")
-	* if its not empty this means that a letter which was present in the word was guessed (a correct guess)
-	*and an index contains this letter (ie. ***e***e)
-	*@returns boolean result of whether it is an empty list/was a correct guess */
+	/**checks to see if the letter recently given is a valid guess
+	*@returns boolean result of whether it was a correct guess */
 	public boolean isValidGuess(){
 		return !listCheck(guesses, size);
 	}

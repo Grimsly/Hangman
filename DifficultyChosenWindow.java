@@ -62,17 +62,17 @@ public class DifficultyChosenWindow extends JFrame implements ActionListener{
 		if (event.getActionCommand().equals("Hard Difficulty")){
 			
 			WordBeingGuessed newWord = new WordBeingGuessed(3);
-			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordChosen());
+			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordDifficulty());
 
 		} else if(event.getActionCommand().equals("Medium Difficulty")) { 
 			
 			WordBeingGuessed newWord = new WordBeingGuessed(2);
-			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordChosen());
+			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordDifficulty());
 			
 		} else if(event.getActionCommand().equals("Easy Difficulty")) {
 			
 			WordBeingGuessed newWord = new WordBeingGuessed(1);
-			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordChosen());
+			MainGameWindow newWindow3 = new MainGameWindow(newWord.wordDifficulty());
 			
 		}
 		

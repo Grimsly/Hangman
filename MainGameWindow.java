@@ -171,8 +171,8 @@ public class MainGameWindow extends JFrame implements ActionListener{
 	*whether it is wrong or right is then passed to isCorrect to affect lives*/
 	public void actionPerformed(ActionEvent event) {
 		pressed = (event.getActionCommand()).toLowerCase();
-		newGuess.answerList(pressed);
-		wordList.checkOff(pressed);
+		newGuess.guessesAvailable(pressed);
+		wordList.replaceLetter(pressed);
 		System.out.println(pressed);
 		System.out.println(newGuess.isValidGuess());
 		isCorrect(newGuess.isValidGuess(), wordList.winGame(), pressed);

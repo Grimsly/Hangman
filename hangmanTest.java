@@ -8,33 +8,33 @@ public class hangmanTest {
 	@Test
 	public void wordReturnTest() {
 		WordBeingGuessed guess = new WordBeingGuessed (1);
-		assertThat(guess.wordChosen(), anyOf(is("aimed"), is("havoc"), is("flute"), is("twist"), is("blade")));
+		assertThat(guess.wordDifficulty(), anyOf(is("aimed"), is("havoc"), is("flute"), is("twist"), is("blade")));
 		guess = new WordBeingGuessed (2);
-		assertThat(guess.wordChosen(), anyOf(is("girlfriend"), is("attractive"), is("resounding"), is("speciality"), is("xenophobia")));
+		assertThat(guess.wordDifficulty(), anyOf(is("girlfriend"), is("attractive"), is("resounding"), is("speciality"), is("xenophobia")));
 		guess = new WordBeingGuessed (3);
-		assertThat(guess.wordChosen(), anyOf(is("counterargument"), is("autobiographies"), is("destructiveness"), is("logarithmically"), is("unsportsmanlike")));
+		assertThat(guess.wordDifficulty(), anyOf(is("counterargument"), is("autobiographies"), is("destructiveness"), is("logarithmically"), is("unsportsmanlike")));
 	}
 	
 	@Test
 	public void wordCheckTest() {
 		CheckList check = new CheckList("abba");
 		assertFalse(check.winGame());
-		check.checkOff("a");
+		check.replaceLetter("a");
 		assertFalse(check.winGame());
-		check.checkOff("b");
+		check.replaceLetter("b");
 		assertTrue(check.winGame());
 	}
 	
 	@Test
 	public void validGuessTest() {
 		ValidGuess guess = new ValidGuess("abba");
-		guess.answerList("d");
+		guess.guessesAvailable("d");
 		assertFalse(guess.isValidGuess());
-		guess.answerList("a");
+		guess.guessesAvailable("a");
 		assertTrue(guess.isValidGuess());
-		guess.answerList("c");
+		guess.guessesAvailable("c");
 		assertFalse(guess.isValidGuess());
-		guess.answerList("b");
+		guess.guessesAvailable("b");
 		assertTrue(guess.isValidGuess());
 	}
 

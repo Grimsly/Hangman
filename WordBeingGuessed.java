@@ -9,9 +9,6 @@ public class WordBeingGuessed {
 	private int wordNum = new Random().nextInt(5);
 	private String word;	
 	
-	/** constructor class
-	*@Arguments difficulty level
-	*saves the difficulty as instance variable*/
 	public WordBeingGuessed(int difficulty) {
 		if (difficulty >=1 && difficulty <=3){
 			dif = difficulty; 
@@ -20,9 +17,7 @@ public class WordBeingGuessed {
 		}
 	}
 	
-	/**takes the difficulty level and gives it to a switch statement
-	*chooses a random value between 1 and 5
-	*matches up the random value and the difficulty in the switch setting to obtain a word
+	/**Depending on the difficulty level, a word will be randomly chosen for each difficulty
 	*@returns word*/
 	public String wordDifficulty(){
 
