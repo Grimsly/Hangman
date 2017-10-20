@@ -8,7 +8,7 @@ public class CheckList {
 	private boolean listChecked = false;
 	private String word;
 	private static String[] guesses;
-	public static int size = 5;
+	public static int size;
 	
 	//defaults constructor sets word to "hello" testing purposes only
 	public CheckList(){

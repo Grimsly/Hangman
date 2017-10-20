@@ -9,7 +9,7 @@ public class ValidGuess {
 	private String word;
 	private String guess;
 	private static String[] guesses;
-	public static int size = 5;
+	public static int size;
 	
 	//defaults constructor sets word to "hello" testing purposes only
 	public ValidGuess(){
