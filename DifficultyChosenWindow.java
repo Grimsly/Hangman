@@ -79,13 +79,13 @@ public class DifficultyChosenWindow extends JFrame implements ActionListener{
 	
 	}
 	
-	/*
+	
 	public static void main (String[] args) {
 		
 		DifficultyChosenWindow newWindow = new DifficultyChosenWindow();
 		
 	}
-	*/
+	
 }
 	
 	
