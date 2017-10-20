@@ -3,17 +3,12 @@
 /**compares the guessed letter to the word given
 *if the letter appears in the word isValid variable is changed to true
 *uses a for loop to go through the word*/
-public class CheckList {
+public class CheckList extends ValidList{
 	//instance variables
-	private boolean listChecked = false;
 	private String word;
 	private static String[] guesses;
 	public static int size;
-	
-	//defaults constructor sets word to "hello" testing purposes only
-	public CheckList(){
-		this("hello");
-	}
+
 	
 	//sets instance variables and size to the word chosen
 	public CheckList(String wordChosen){
@@ -49,15 +44,8 @@ public class CheckList {
 	* if its not empty this means that a letter which was present in the word was guessed (a correct guess)
 	*and an index contains this letter (ie. ***e***e)
 	*@returns boolean result of whether it is an empty list/was a correct guess */
-	public boolean winGame(){
-		listChecked = true;
-		for (int index = 0; index<size; index++){
-			if (guesses[index] != "*"){
-				listChecked = false;
-			}
-		} 
-		
-		return listChecked;
+	public boolean winGame() {
+		return listCheck(guesses, size);
 	}
 	
 }

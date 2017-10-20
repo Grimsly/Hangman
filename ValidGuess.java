@@ -3,19 +3,14 @@
 /**compares the guessed letter to the word given
 *if the letter appears in the word isValid variable is changed to true
 *uses a for loop to go through the word*/
-public class ValidGuess {
+public class ValidGuess extends ValidList{
 	//instance variables
 	private boolean isValid = false;
 	private String word;
 	private String guess;
 	private static String[] guesses;
 	public static int size;
-	
-	//defaults constructor sets word to "hello" testing purposes only
-	public ValidGuess(){
-		this("hello");
-	}
-	
+
 	//sets instance variables and size to the word chosen
 	public ValidGuess(String wordChosen){
 		word = wordChosen;
@@ -47,14 +42,7 @@ public class ValidGuess {
 	*and an index contains this letter (ie. ***e***e)
 	*@returns boolean result of whether it is an empty list/was a correct guess */
 	public boolean isValidGuess(){
-		isValid = false;
-		for (int index = 0; index<size; index++){
-			if (guesses[index] != "*"){
-				isValid = true;
-			}
-		} 
-		
-		return isValid;
+		return !listCheck(guesses, size);
 	}
 	
 }
