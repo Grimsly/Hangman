@@ -20,11 +20,6 @@ public class WordBeingGuessed {
 		}
 	}
 	
-	/**default constructor sets difficulty to 1 (easy)*/
-	public WordBeingGuessed() {
-		dif = 1;
-	}
-	
 	/**takes the difficulty level and gives it to a switch statement
 	*chooses a random value between 1 and 5
 	*matches up the random value and the difficulty in the switch setting to obtain a word
