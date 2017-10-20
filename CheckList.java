@@ -6,8 +6,7 @@
 public class CheckList {
 	//instance variables
 	private boolean listChecked = false;
-	private String word = "hello";
-	private String guess = "h";
+	private String word;
 	private static String[] guesses;
 	public static int size = 5;
 	

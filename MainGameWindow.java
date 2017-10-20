@@ -171,7 +171,7 @@ public class MainGameWindow extends JFrame implements ActionListener{
 	*whether it is wrong or right is then passed to isCorrect to affect lives*/
 	public void actionPerformed(ActionEvent event) {
 		pressed = (event.getActionCommand()).toLowerCase();
-		newGuess.AnswerList(pressed);
+		newGuess.answerList(pressed);
 		wordList.checkOff(pressed);
 		System.out.println(pressed);
 		System.out.println(newGuess.isValidGuess());
@@ -276,8 +276,10 @@ public class MainGameWindow extends JFrame implements ActionListener{
 		
 		if(listDone == true){
 			System.out.println("You win");
+			frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 		}else if (fails == 6){
 			System.out.println("You lose");
+			frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
 		}
 	}
 	

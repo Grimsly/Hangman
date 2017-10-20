@@ -3,13 +3,15 @@
 import java.util.Random;
 /**takes a random value from between 0 and 5 and then returns a word based on the number and the difficulty setting*/
 
-
 public class WordBeingGuessed {
 	//instance variables
 	private int dif;
 	private int wordNum = new Random().nextInt(5);
 	private String word;	
 	
+	/** constructor class
+	*@Arguments difficulty level
+	*saves the difficulty as instance variable*/
 	public WordBeingGuessed(int difficulty) {
 		if (difficulty >=1 && difficulty <=3){
 			dif = difficulty; 
@@ -18,7 +20,14 @@ public class WordBeingGuessed {
 		}
 	}
 	
-	/**Depending on the difficulty level, a word will be randomly chosen for each difficulty
+	/**default constructor sets difficulty to 1 (easy)*/
+	public WordBeingGuessed() {
+		dif = 1;
+	}
+	
+	/**takes the difficulty level and gives it to a switch statement
+	*chooses a random value between 1 and 5
+	*matches up the random value and the difficulty in the switch setting to obtain a word
 	*@returns word*/
 	public String wordDifficulty(){
 
